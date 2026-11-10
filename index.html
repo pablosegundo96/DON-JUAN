@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Don Juan SRL | Alimentos y mercadería para proyectos mineros</title>
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f3ee;--surface:#fff;--ink:#1c1b19;--muted:#5c5850;--line:#ddd6ca;--accent:#c47a12;--dark:#1c1b19;--on-dark:#f6f3ee;--map:#ebe5d8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141311;--surface:#1e1c19;--ink:#f1ede6;--muted:#aaa397;--line:#33302b;--dark:#0c0b0a;--map:#221f1b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141311;--surface:#1e1c19;--ink:#f1ede6;--muted:#aaa397;--line:#33302b;--dark:#0c0b0a;--map:#221f1b;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Barlow,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;text-transform:uppercase;line-height:1.05;margin:0}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--dark);color:var(--on-dark)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:700 26px "Barlow Condensed","Arial Narrow",sans-serif;letter-spacing:.06em;text-decoration:none;text-transform:uppercase}
+.logo b{color:var(--accent)}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-img{display:block;border-radius:8px;height:40px;width:auto;max-width:180px;object-fit:contain}
+.foot-logo{display:block;border-radius:10px;height:44px;width:auto;max-width:200px;margin:0 auto 12px;object-fit:contain}
+nav{display:flex;gap:22px;font-size:15px}
+nav a{text-decoration:none;opacity:.85}nav a:hover{opacity:1;color:var(--accent)}
+.burger{display:none;background:none;border:0;width:44px;height:44px;padding:10px;cursor:pointer;flex-direction:column;justify-content:center;gap:5px}
+.burger span{display:block;height:2px;background:var(--on-dark);transition:transform .2s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:900px){.burger{display:flex}
+nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--dark);border-top:1px solid #33302b;padding:6px 20px 14px}
+nav.open{display:flex}
+nav a{padding:14px 0;font-size:18px;border-bottom:1px solid #2a2824;opacity:1}
+nav a.cta{border-bottom:0}}
+.btn{display:inline-block;background:var(--accent);color:#1c1b19;font-weight:500;padding:13px 26px;text-decoration:none;border:0;cursor:pointer;font-size:16px;font-family:inherit}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:#f6f3ee;border:1px solid rgba(246,243,238,.5);margin-left:10px}
+.hero{background:linear-gradient(115deg,rgba(12,11,10,.94) 40%,rgba(12,11,10,.55)),repeating-linear-gradient(135deg,#3a2f1f 0 18px,#2d2418 18px 36px);color:#f6f3ee;padding:110px 0 100px}
+.hero h1{font-size:clamp(42px,7.5vw,84px);max-width:860px}
+.hero h1 span{color:var(--accent)}
+.hero .kicker{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-size:clamp(20px,3.6vw,32px);font-weight:700;letter-spacing:.1em;margin-bottom:16px}
+.hero p{max-width:580px;font-size:19px;opacity:.88;margin:22px 0 32px}
+section{padding:80px 0}
+.kicker{color:var(--accent);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:13px;margin-bottom:10px}
+h2{font-size:clamp(32px,5vw,48px);margin-bottom:18px}
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+@media(max-width:820px){.two{grid-template-columns:1fr;gap:28px}}
+.muted{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.stat{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);padding:20px}
+.stat b{display:block;font:700 44px "Barlow Condensed","Arial Narrow",sans-serif;line-height:1}
+.stat small{color:var(--muted)}
+.band{background:var(--surface);border-block:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;margin-top:30px}
+.card{background:var(--surface);border:1px solid var(--line);padding:26px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.band .card{background:var(--bg)}
+.card .n{font:700 15px "Barlow Condensed",sans-serif;color:var(--accent);letter-spacing:.1em}
+.card h3{font-size:25px;margin:8px 0 8px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.dark{background:var(--dark);color:var(--on-dark)}
+.dark .muted{color:#aaa397}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2px;margin-top:30px;background:#33302b}
+.steps div{background:var(--dark);padding:26px}
+.steps b{font:700 44px "Barlow Condensed",sans-serif;color:var(--accent);display:block;line-height:1}
+.steps h3{font-size:24px;margin:6px 0 6px}
+.steps p{margin:0;color:#aaa397;font-size:15.5px}
+.mapbox{border:1px solid var(--line);background:var(--map);overflow:hidden}
+.mapbox svg{display:block;width:100%;height:auto}
+.mapbox figcaption{padding:10px 16px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+.info p{margin:0 0 6px}
+form{display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);padding:26px}
+input,textarea{width:100%;padding:12px;font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.dark form{color:var(--ink)}
+select{width:100%;padding:12px;font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted)}.chk input{width:auto;margin-top:5px}
+.hp{position:absolute;left:-9999px}
+#cvs{margin:0;font-size:15px;min-height:1.4em}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:30px}
+.ph{margin:0;position:relative;aspect-ratio:4/3;overflow:hidden;border:1px solid var(--line);background:repeating-linear-gradient(135deg,var(--map) 0 14px,var(--surface) 14px 28px);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;text-align:center}
+.ph.wide{aspect-ratio:4/3}
+@media(min-width:700px){.ph.wide{grid-column:span 2;aspect-ratio:2.4/1}}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:8px 14px;background:rgba(12,11,10,.7);color:#f6f3ee;font-size:14px;text-align:left}
+footer{background:var(--dark);color:#aaa397;padding:30px 0;font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#inicio"><img class="logo-img" src="img/logo.png" alt="" onerror="this.remove()"><span>Don <b>Juan</b> SRL</span></a>
+<nav id="menu"><a href="#nosotros">Nosotros</a><a href="#productos">Productos</a><a href="#deposito">Depósito</a><a href="#trabaja">Trabajá con nosotros</a><a href="#contacto" class="cta">Contacto</a></nav>
+<button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+</div></header>
+
+<main>
+<section class="hero" id="inicio"><div class="wrap">
+<div class="kicker">Don Juan SRL · Proveedores de alimentos · Catamarca</div>
+<h1>Alimentos y mercadería para <span>proyectos mineros</span></h1>
+<p>Abastecemos a los campamentos de los proyectos de litio de Catamarca con productos de calidad, entregas programadas y un depósito propio en Santa María.</p>
+<a class="btn" href="#contacto">Solicitar cotización</a><a class="btn ghost" href="#deposito">Ver depósito</a>
+</div></section>
+
+<section id="nosotros"><div class="wrap two">
+<div>
+<div class="kicker">Quiénes somos</div>
+<h2>Abastecimiento que acompaña a la operación</h2>
+<p class="muted">Don Juan SRL es una empresa catamarqueña dedicada a proveer mercadería y alimentos a proyectos mineros de litio. Desde nuestro depósito en Santa María organizamos pedidos, stock y entregas para que los campamentos nunca se queden sin lo necesario.</p>
+<p class="muted">[Completar: año de fundación, historia breve, habilitaciones sanitarias, pertenencia a la cámara de proveedores mineros.]</p>
+</div>
+<div class="stats">
+<div class="stat"><b>XX+</b><small>años de experiencia</small></div>
+<div class="stat"><b>XX</b><small>proyectos abastecidos</small></div>
+<div class="stat"><b>XX</b><small>m² de depósito</small></div>
+<div class="stat"><b>XX</b><small>vehículos de reparto</small></div>
+</div>
+</div></section>
+
+<section class="band" id="productos"><div class="wrap">
+<div class="kicker">Qué proveemos</div>
+<h2>Productos para campamentos y plantas</h2>
+<div class="grid">
+<div class="card"><span class="n">01</span><h3>Almacén y secos</h3><p>Arroz, fideos, harinas, aceites, conservas y todo lo necesario para la cocina del campamento.</p></div>
+<div class="card"><span class="n">02</span><h3>Carnes y congelados</h3><p>Carnes, pollo y productos congelados para menús diarios de gran volumen.</p></div>
+<div class="card"><span class="n">03</span><h3>Frutas y verduras</h3><p>Productos frescos de estación, seleccionados y entregados en tiempo y forma.</p></div>
+<div class="card"><span class="n">04</span><h3>Lácteos y fiambres</h3><p>Leche, quesos, yogures, fiambres y huevos para desayunos y comidas.</p></div>
+<div class="card"><span class="n">05</span><h3>Bebidas</h3><p>Agua, gaseosas, jugos e infusiones para el personal en faena.</p></div>
+<div class="card"><span class="n">06</span><h3>Limpieza y descartables</h3><p>Insumos de higiene, limpieza y descartables para campamentos y comedores.</p></div>
+</div>
+<p class="muted" style="margin-top:22px">[Ajustar el listado a los rubros reales que maneja la empresa.]</p>
+</div></section>
+
+<section class="dark" id="logistica"><div class="wrap">
+<div class="kicker">Cómo trabajamos</div>
+<h2>Del pedido al campamento</h2>
+<div class="steps">
+<div><b>01</b><h3>Pedido</h3><p>Recibimos el listado del proyecto y armamos la cotización.</p></div>
+<div><b>02</b><h3>Preparación</h3><p>Armamos y controlamos el pedido en nuestro depósito de Santa María.</p></div>
+<div><b>03</b><h3>Entrega</h3><p>Despachamos según el cronograma acordado con cada proyecto.</p></div>
+</div>
+</div></section>
+
+<section id="deposito"><div class="wrap two">
+<div class="info">
+<div class="kicker">Nuestro depósito</div>
+<h2>Base operativa en Santa María, Catamarca</h2>
+<p class="muted">Desde Santa María, en el valle, preparamos y despachamos los pedidos hacia los proyectos de litio de la Puna catamarqueña.</p>
+<p class="muted">Dirección: [completar calle y número]<br>Horario de atención: [completar]<br>Teléfono: [completar]</p>
+<p style="margin-top:20px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Santa+Mar%C3%ADa%2C+Catamarca%2C+Argentina">Abrir en Google Maps</a></p>
+</div>
+<figure class="mapbox" style="margin:0">
+<svg viewBox="0 0 600 420" role="img" aria-label="Mapa esquemático: depósito en Santa María y rutas hacia los proyectos de litio de la Puna catamarqueña">
+<defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="var(--line)" stroke-width="1"/></pattern></defs>
+<rect width="600" height="420" fill="url(#g)"/>
+<path d="M30 60 L330 30 L420 120 L360 230 L430 330 L240 395 L110 300 L60 170Z" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/>
+<text x="120" y="210" fill="var(--muted)" font-size="14" font-family="Barlow,sans-serif" letter-spacing="3">CATAMARCA</text>
+<path d="M400 300 C340 250 250 200 175 120" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="8 8"/>
+<path d="M400 300 C330 240 300 150 270 95" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="8 8"/>
+<g fill="var(--ink)" font-family="Barlow,sans-serif" font-size="14">
+<circle cx="175" cy="120" r="7" fill="var(--muted)"/><text x="60" y="108">Puna · proyectos de litio</text>
+<circle cx="270" cy="95" r="7" fill="var(--muted)"/><text x="282" y="92">Salares</text>
+</g>
+<g transform="translate(400 300)">
+<circle r="22" fill="var(--accent)" opacity=".25"/>
+<path d="M0 -26 C-14 -26 -20 -14 -20 -6 C-20 8 0 24 0 24 C0 24 20 8 20 -6 C20 -14 14 -26 0 -26Z" fill="var(--accent)"/>
+<circle cy="-8" r="7" fill="var(--surface)"/>
+</g>
+<text x="372" y="350" fill="var(--ink)" font-size="17" font-weight="700" font-family="Barlow,sans-serif">Depósito Don Juan SRL</text>
+<text x="372" y="369" fill="var(--muted)" font-size="14" font-family="Barlow,sans-serif">Santa María, Catamarca</text>
+</svg>
+<figcaption>Mapa esquemático, no a escala.</figcaption>
+</figure>
+</div></section>
+
+<section id="galeria"><div class="wrap">
+<div class="kicker">Galería</div>
+<h2>Así trabajamos</h2>
+<div class="gallery">
+<figure class="ph wide"><img src="img/deposito.jpg" alt="Camiones frente al depósito de Don Juan SRL en Santa María" loading="lazy"><figcaption>Depósito en Santa María</figcaption></figure>
+<figure class="ph">Foto: mercadería<figcaption>Mercadería y stock</figcaption></figure>
+<figure class="ph"><img src="img/pedidos.jpg" alt="Cajones de verduras listos para armar un pedido" loading="lazy" style="object-position:center 30%"><figcaption>Preparación de pedidos</figcaption></figure>
+<figure class="ph">Foto: vehículos de reparto<figcaption>Vehículos de reparto</figcaption></figure>
+<figure class="ph">Foto: entrega en campamento<figcaption>Entrega en campamento</figcaption></figure>
+<figure class="ph">Foto: equipo de trabajo<figcaption>Nuestro equipo</figcaption></figure>
+</div>
+</div></section>
+
+<section class="dark" id="trabaja"><div class="wrap two">
+<div>
+<div class="kicker">Trabajá con nosotros</div>
+<h2>Sumate al equipo</h2>
+<p class="muted">Si querés formar parte de Don Juan SRL, completá el formulario y adjuntá tu CV en PDF o Word (hasta 5 MB). Lo tendremos en cuenta para futuras búsquedas.</p>
+</div>
+<form id="cvf" enctype="multipart/form-data">
+<input name="nombre" placeholder="Nombre y apellido" required>
+<input name="email" type="email" placeholder="Email" required>
+<input name="tel" placeholder="Teléfono">
+<select name="puesto"><option>Depósito y logística</option><option>Chofer / reparto</option><option>Administración</option><option>Ventas</option><option>Otro</option></select>
+<input name="cv" type="file" accept=".pdf,.doc,.docx" required>
+<input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label class="chk"><input type="checkbox" name="ok" required> Acepto que Don Juan SRL conserve mis datos para evaluar mi postulación.</label>
+<button class="btn" type="submit">Enviar CV</button>
+<p id="cvs" role="status"></p>
+</form>
+</div></section>
+
+<section class="band" id="contacto"><div class="wrap two">
+<div>
+<div class="kicker">Contacto</div>
+<h2>Pidanos su cotización</h2>
+<p class="muted">Cuéntenos qué proyecto abastece y qué necesita. Le respondemos a la brevedad.</p>
+<p class="muted">Teléfono: [completar]<br>Email: [completar]<br>Santa María, Catamarca, Argentina</p>
+</div>
+<form id="f">
+<input name="nombre" placeholder="Nombre y empresa" required>
+<input name="email" type="email" placeholder="Email" required>
+<input name="tel" placeholder="Teléfono">
+<textarea name="msg" rows="4" placeholder="Mensaje" required></textarea>
+<button class="btn" type="submit">Enviar consulta</button>
+</form>
+</div></section>
+</main>
+
+<footer><div class="wrap"><img class="foot-logo" src="img/logo.png" alt="Don Juan SRL" onerror="this.remove()">© <span id="y"></span> Don Juan SRL · Alimentos y mercadería para proyectos mineros · Santa María, Catamarca</div></footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+document.getElementById('f').addEventListener('submit',function(e){
+e.preventDefault();var d=new FormData(e.target);
+var body='Nombre: '+d.get('nombre')+'\nTeléfono: '+d.get('tel')+'\n\n'+d.get('msg');
+location.href='mailto:contacto@donjuan.com.ar?subject='+encodeURIComponent('Consulta web - '+d.get('nombre'))+'&body='+encodeURIComponent(body);
+});
+</script>
+<script>
+(function(){var b=document.querySelector('.burger'),n=document.getElementById('menu');
+function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú')}
+b.addEventListener('click',function(){set(!n.classList.contains('open'))});
+n.addEventListener('click',function(e){if(e.target.tagName==='A')set(false)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});})();
+</script>
+<script>
+(function(){var f=document.getElementById('cvf'),s=document.getElementById('cvs');
+f.addEventListener('submit',function(e){e.preventDefault();
+var file=f.cv.files[0];
+if(file&&file.size>5*1024*1024){s.textContent='El archivo supera los 5 MB.';return;}
+s.textContent='Enviando…';
+fetch('enviar-cv.php',{method:'POST',body:new FormData(f)}).then(function(r){return r.json()}).then(function(j){s.textContent=j.ok?'¡Gracias! Recibimos tu CV.':(j.error||'No se pudo enviar.');if(j.ok)f.reset()}).catch(function(){s.textContent='No se pudo enviar. Escribinos por email.'})})})();
+</script>
+</body>
+</html>

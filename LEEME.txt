@@ -1,0 +1,5 @@
+Subir todo el contenido de esta carpeta a public_html en Hostinger.
+1) Las imagenes ya estan en img/ (logo.png, favicon.png, deposito.jpg). Para agregar mas fotos, ponerlas ahi y cambiar los recuadros de la galeria en index.html.
+2) Editar enviar-cv.php: $DESTINO (donde llegan los CV) y $REMITENTE (casilla del dominio)
+3) Completar en index.html los textos entre corchetes [completar]
+4) Probar el formulario de CV con un archivo de prueba
